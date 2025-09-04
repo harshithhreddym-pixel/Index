@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Chayaaaaaaaaaaaaaaaa💙</title>
+  <link href="https://fonts.googleapis.com/css2?family=Parisienne:ital@1&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --ink:#0a1a3c; --muted:#2f4e86; --accent:#1e40af; --ring:#93c5fd;
+      --bg1:#e6f0ff; --bg2:#b3d1ff; --bg3:#6aa9ff;
+      --yes:#60a5fa; --yesss:#2563eb;
+      --blueA:#3b82f6; --blueB:#2563eb; --blueC:#60a5fa; --blueD:#1e40af;
+      --sunA:#f6d36b; --sunB:#eab54e; --sunC:#e3a42e; --core:#8b5a2b;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%; margin:0; padding:0}
+    body{
+      min-height:100dvh; width:100dvw; overflow:hidden;
+      font-family:'Parisienne',cursive; font-style:italic;
+      color:var(--ink);
+      background:
+        radial-gradient(1200px 800px at 10% 10%, var(--bg2), transparent 60%),
+        radial-gradient(1000px 700px at 90% 15%, var(--bg3), transparent 55%),
+        linear-gradient(180deg, var(--bg1), #eaf2ff 40%, #dfeaff 100%);
+    }
+    .wrap{
+      min-height:100dvh; width:100dvw; display:grid; place-items:center;
+      padding:max(20px, env(safe-area-inset-top)) max(20px, env(safe-area-inset-right)) max(20px, env(safe-area-inset-bottom)) max(20px, env(safe-area-inset-left));
+      position:relative;
+    }
+    .sun-layer{ position:fixed; inset:0; z-index:0; pointer-events:none; display:grid; grid-template-columns:repeat(6, 1fr); gap:24px; padding:24px; opacity:.25; }
+    .sun{ width:56px; height:56px; place-self:center; animation:sway 5.5s ease-in-out infinite; }
+    .sun:nth-child(odd){ animation-duration:6.4s }
+    @keyframes sway{ 0%,100%{ transform:rotate(-3deg) translateY(0) } 50%{ transform:rotate(3deg) translateY(2px) } }
+    .rose-layer{ position:fixed; inset:0; overflow:hidden; pointer-events:none; z-index:1; }
+    .ui{ position:relative; z-index:2; width:100% }
+    .content{
+      width:min(860px, 92vw);
+      background:linear-gradient(180deg, #f0f8ffcc, #f5faffcc);
+      backdrop-filter: blur(10px);
+      border:1px solid #cfe3ff; border-radius:28px;
+      padding:36px 28px 22px; box-shadow:0 10px 30px -10px #6aa9ff66, inset 0 1px 0 #ffffffcc;
+      position:relative; overflow:hidden;
+    }
+    h1{ margin:0 0 8px; font-family:"Parisienne",cursive; font-style:italic;
+        font-weight:400; font-size:clamp(40px,6vw,66px);
+        line-height:1.05; color:var(--accent);
+        text-shadow:0 2px 0 #ffffffcc, 0 12px 30px #9cc3ff80; }
+    p.lead{ margin:10px 0 22px; font-size:clamp(18px,2.6vw,20px); color:var(--muted); font-style:italic; line-height:1.65;}
+    .cta-area{ position:relative; width:100%; height:160px; }
+    .btn{
+      position:absolute; appearance:none; border:0; cursor:pointer;
+      padding:14px 22px; border-radius:16px;
+      font-family:'Parisienne',cursive; font-style:italic;
+      color:white; font-weight:800; letter-spacing:.02em;
+      box-shadow:0 10px 24px -8px #60a5fa88, inset 0 -2px 0 #ffffff33;
+      outline:2px solid transparent; outline-offset:2px; user-select:none; will-change:transform; transform:translateZ(0);
+      transition:box-shadow .15s ease, background .2s ease;
+    }
+    .btn:focus-visible{ outline:3px solid var(--ring) }
+    .btn-yes{ background:linear-gradient(180deg, #7bb3ff, var(--yes)); }
+    .btn-yesss{ background:linear-gradient(180deg, #3b82f6, var(--yesss)); }
+    .btn-yesss::after{ content:"✨"; position:absolute; right:-8px; top:-8px; font-size:16px; animation:pop 1.2s ease-in-out infinite; }
+    @keyframes pop{0%,100%{transform:scale(1)} 50%{transform:scale(1.2)}}
+    .trail{ position:fixed; width:18px; height:18px; pointer-events:none; z-index:3; opacity:.9; will-change:transform, opacity; }
+  </style>
+</head>
+<body>
+  <div class="sun-layer" id="sunLayer" aria-hidden="true"></div>
+  <div class="rose-layer" id="roseLayer" aria-hidden="true"></div>
+  <div class="wrap ui">
+    <div class="content">
+      <h2>Accept this sweetieeee🌻🥺 </h2>
+      <p class="lead">
+        Heyyyyyyyyyy BBG💙,</p>
+      <p>
+              idk at what time you will be seeing this but im trying my shot,might be risking it all but im trying,
+              so heres a invitation for you to come out with me this friday thats 5th of september,let me make it a small way of making it up to you and make it a great evening.
+              thanks for accepting the invite🌻
+              {cos theres no NO to be said or chosen,call me once u see this.😏🌻🌻}
+      </p>
+      <div class="cta-area" id="ctaArea">
+        <button class="btn btn-yes" id="yesBtn">yes</button>
+        <button class="btn btn-yesss" id="yesssBtn">YESSS</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Sunflower SVG
+    function makeSunflowerSVG(size=56){
+      const ns='http://www.w3.org/2000/svg';
+      const svg=document.createElementNS(ns,'svg');
+      svg.setAttribute('viewBox','0 0 100 100');
+      svg.setAttribute('width',size); svg.setAttribute('height',size);
+      const defs=document.createElementNS(ns,'defs');
+      const grad=document.createElementNS(ns,'radialGradient');
+      grad.setAttribute('id','g'+Math.random().toString(36).slice(2,8));
+      grad.innerHTML = `
+        <stop offset="0%" stop-color="var(--sunA)"/>
+        <stop offset="70%" stop-color="var(--sunB)"/>
+        <stop offset="100%" stop-color="var(--sunC)"/>
+      `;
+      defs.appendChild(grad);
+      svg.appendChild(defs);
+      const petals=document.createElementNS(ns,'g');
+      for(let i=0;i<18;i++){
+        const p=document.createElementNS(ns,'ellipse');
+        p.setAttribute('cx','50'); p.setAttribute('cy','30');
+        p.setAttribute('rx','10'); p.setAttribute('ry','24');
+        p.setAttribute('fill', `url(#${grad.id})`);
+        p.setAttribute('transform', `rotate(${(360/18)*i} 50 50) translate(0 6)`);
+        petals.appendChild(p);
+      }
+      svg.appendChild(petals);
+      const core=document.createElementNS(ns,'circle');
+      core.setAttribute('cx','50'); core.setAttribute('cy','50'); core.setAttribute('r','12');
+      core.setAttribute('fill','var(--core)');
+      svg.appendChild(core);
+      return svg;
+    }
+    // Sunflowers
+    const sunLayer = document.getElementById('sunLayer');
+    (function fillSunLayer(){
+      const cols = 6, rows = 4;
+      for(let i=0;i<cols*rows;i++){
+        const d=document.createElement('div'); d.className='sun';
+        d.appendChild(makeSunflowerSVG(56));
+        sunLayer.appendChild(d);
+      }
+    })();
+    // Roses
+    const roseLayer = document.getElementById('roseLayer');
+    function makeRoseSVG(a='#3b82f6',b='#1e40af'){
+      const ns='http://www.w3.org/2000/svg';
+      const svg=document.createElementNS(ns,'svg'); svg.setAttribute('viewBox','0 0 24 24'); svg.setAttribute('width','20'); svg.setAttribute('height','20');
+      const petal=document.createElementNS(ns,'path'); petal.setAttribute('d','M12 3c3 0 6 2.5 6 6 0 4-3 6-6 6s-6-2-6-6c0-3.5 3-6 6-6z'); petal.setAttribute('fill',a);
+      const swirl=document.createElementNS(ns,'path'); swirl.setAttribute('d','M12 6c2 0 3.5 1.2 3.5 3s-1.5 3-3.5 3-3.5-1.2-3.5-3 1.5-3 3.5-3z'); swirl.setAttribute('fill',b);
+      const stem=document.createElementNS(ns,'path'); stem.setAttribute('d','M12 12c.6 2.8.4 5.5-.8 8'); stem.setAttribute('stroke',b); stem.setAttribute('stroke-width','1.4'); stem.setAttribute('fill','none'); stem.setAttribute('stroke-linecap','round');
+      svg.append(petal,swirl,stem); return svg;
+    }
+    function spawnRose(){
+      const node=document.createElement('div'); node.style.position='fixed'; node.style.top='-8vh'; node.style.opacity='.9';
+      node.style.willChange='transform,opacity'; node.style.zIndex='1';
+      node.appendChild(makeRoseSVG(['#3b82f6','#2563eb','#60a5fa'][Math.floor(Math.random()*3)], ['#1e40af','#3b82f6'][Math.floor(Math.random()*2)]));
+      const startX = Math.random()*100, rot = (Math.random()*120-60);
+      node.style.left = startX + 'vw'; node.style.transform = `translateY(-8vh) rotate(${rot}deg)`;
+      roseLayer.appendChild(node);
+      const dur = Math.random()*1800 + 2800;
+      node.animate(
+        [{ transform:`translateY(-8vh) rotate(${rot}deg)`, opacity:0.95 },
+         { transform:`translateY(110vh) rotate(${rot + (Math.random()*220-110)}deg)`, opacity:0.88 }],
+        { duration: dur, easing:'cubic-bezier(.22,.61,.36,1)' }
+      ).onfinish = ()=> node.remove();
+    }
+    for(let i=0;i<18;i++) spawnRose();
+    setInterval(spawnRose, 220);
+    // Button burst logic
+    const area = document.getElementById('ctaArea');
+    const yes = document.getElementById('yesBtn');
+    const yesss = document.getElementById('yesssBtn');
+    const buttons = [yes, yesss];
+    const states = new Map();
+    const accelFast = 3600*100, friction = 0.74, maxVFast = 2200*100, boostTime = 0.45, burstProx = 110;
+    function initPositions(){
+      const rect = area.getBoundingClientRect();
+      buttons.forEach((btn,i)=>{
+        const b = btn.getBoundingClientRect();
+        const x = (rect.width - b.width) * (i===0 ? 0.12 : 0.68);
+        const y = (rect.height - b.height) * 0.25 + i*14;
+        states.set(btn, {x, y, vx:0, vy:0, boostUntil:0});
+        btn.style.transform = `translate(${x}px, ${y}px)`;
+      });
+    }
+    window.addEventListener('load', initPositions);
+    window.addEventListener('resize', initPositions);
+    let last = performance.now();
+    function raf(t){
+      const dt = Math.min(0.05, (t - last)/1000); last = t;
+      buttons.forEach((btn, i)=>{
+        const s = states.get(btn); if(!s) return;
+        const now = t/1000;
+        if(now < s.boostUntil){
+          const angle = Math.random()*Math.PI*2;
+          const ux = Math.cos(angle) * (i===0 ? 1 : -1);
+          const uy = Math.sin(angle) * (i===0 ? 1 : -1);
+          s.vx += ux * accelFast * dt;
+          s.vy += uy * accelFast * dt;
+          s.vx *= friction; s.vy *= friction;
+          const v = Math.hypot(s.vx, s.vy); if(v>maxVFast){ const sc = maxVFast/v; s.vx*=sc; s.vy*=sc; }
+          s.x += s.vx * dt; s.y += s.vy * dt;
+          const a = area.getBoundingClientRect();
+          const b = btn.getBoundingClientRect();
+          const maxX = a.width - b.width, maxY = a.height - b.height;
+          if(s.x < 0){ s.x = 0; s.vx = Math.abs(s.vx)*0.55; }
+          if(s.y < 0){ s.y = 0; s.vy = Math.abs(s.vy)*0.55; }
+          if(s.x > maxX){ s.x = maxX; s.vx = -Math.abs(s.vx)*0.55; }
+          if(s.y > maxY){ s.y = maxY; s.vy = -Math.abs(s.vy)*0.55; }
+          btn.style.transform = `translate(${s.x}px, ${s.y}px)`;
+        }
+      });
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+    // Cursor proximity = burst
+    area.addEventListener('pointermove', (e)=>{
+      const ar = area.getBoundingClientRect();
+      const mx = e.clientX - ar.left, my = e.clientY - ar.top;
+      buttons.forEach((btn,i)=>{
+        const rect = btn.getBoundingClientRect();
+        const areaRect = area.getBoundingClientRect();
+        // Center of button relative to area
+        const bx = rect.left - areaRect.left + rect.width/2;
+        const by = rect.top - areaRect.top + rect.height/2;
+        const dist = Math.hypot(bx - mx, by - my);
+        const s = states.get(btn);
+        if(dist < burstProx && s && (performance.now()/1000 > s.boostUntil)) {
+          s.boostUntil = performance.now()/1000 + boostTime;
+        }
+      });
+    }, {passive:true});
+    // Click burst
+    buttons.forEach((btn)=>{
+      btn.addEventListener('click', ()=>{
+        const s = states.get(btn); if(!s) return;
+        s.boostUntil = performance.now()/1000 + boostTime;
+      });
+    });
+    // Sunflower cursor trail
+    window.addEventListener('pointermove', (e)=>{
+      const t=document.createElement('div'); t.className='trail';
+      const s=makeSunflowerSVG(18); t.appendChild(s);
+      document.body.appendChild(t);
+      t.style.left = (e.clientX-9)+'px';
+      t.style.top  = (e.clientY-9)+'px';
+      t.animate(
+        [{ transform:'translateY(0)', opacity:.9 }, { transform:'translateY(-14px)', opacity:0 }],
+        { duration: 900, easing:'ease-out' }
+      ).onfinish = ()=> t.remove();
+    }, {passive:true});
+  </script>
+</body>
+</html>
